@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		 <bean id="songSelector" class="com.springinaction.springidol.spel.SongSelector"/>
+		 <bean id="saxophone" class="com.springinaction.springidol.spel.Saxophone"></bean>
+	 <bean id="kenny" class="com.springinaction.springidol.spel.Instrumentalist">
+	 <property name="instrument" ref="saxophone"></property>
+	 <property name ="song" value="#{songSelector.selectSong()}" />
+	 </bean>
+	 
+
+	 
+	 <bean id="hank" class="com.springinaction.springidol.spel.OneManBand">
+	 
+	 <property name="instruments">
+	 	<props>
+	 		<prop key="GUITAR">STRUM STRUM STRUM</prop>
+	 		<prop key="CYMBAL">CRASH CRASH CRASH"</prop>	
+	 	</props>
+	 </property>
+	 
+	 <!-- Referencing hank's poem by wahtever kenny is playing. 
+	 this can be done the same way as just creating a new bean by itself and using ref to reference the same bean-->
+	 <property name="song" value="#{kenny.song}"></property>
+	 </bean>
+	 
+	 
+
+</beans>
