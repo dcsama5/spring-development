@@ -1,7 +1,13 @@
 package com.springinaction.springidol;
 
+import java.util.Collection;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+
+
+
 
 public class Main {
 
@@ -14,12 +20,18 @@ public class Main {
 		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");
 		
-		Performer hank = (Performer) ctx.getBean("hank");
-		
+		OneManBand hank = (OneManBand) ctx.getBean("hank");
 		hank.perform();
-	
+		Poem hankspoem = hank.getPoem();
+		if(hankspoem instanceof Sonnet29)
+			System.out.println("Hanks poem is of type "+Sonnet29.class);
+		Instrumentalist kenny = (Instrumentalist) ctx.getBean("kenny");
+		Collection<Instrument> list = kenny.getInstruments();
+		for(Instrument e : list)
+		{
+			e.play();
+		}
 
-		
 	}
 
 }

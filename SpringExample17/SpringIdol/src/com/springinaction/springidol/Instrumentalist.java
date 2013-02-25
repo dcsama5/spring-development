@@ -1,5 +1,8 @@
 package com.springinaction.springidol;
 
+
+import java.util.*;
+
 public class Instrumentalist implements Performer {
 	private Poem poem;
 	
@@ -22,6 +25,12 @@ public class Instrumentalist implements Performer {
 	public void setInstrument(Instrument instrument)
 	{
 		this.instrument = instrument;
+	}
+
+	public Collection<Instrument> getInstruments() {
+		Collection<Instrument> instruments = new ArrayList<Instrument>();
+		instruments.add(this.instrument);
+				return instruments;
 	}
 
 	

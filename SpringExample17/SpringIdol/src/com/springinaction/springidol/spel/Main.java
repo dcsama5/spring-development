@@ -13,13 +13,18 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spel/spring-idol.xml");
-		Performer kenny = (Performer) ctx.getBean("kenny");
+		Instrumentalist kenny = (Instrumentalist) ctx.getBean("kenny");
 		
-		Performer hank = (Performer) ctx.getBean("hank");
+		Performer hank = (OneManBand) ctx.getBean("hank");
+		
 		
 		kenny.perform();
 		hank.perform();
-	
+		System.out.println(hank.getClass());
+		System.out.println(kenny.getSong().hashCode());
+		
+		
+		
 
 		
 	}

@@ -36,6 +36,9 @@ public class OneManBand implements Performer {
 		this.instruments = instruments;
 	}
 	
-	
+	public Poem getPoem()
+	{
+		return this.poem;
+	}
 
 }

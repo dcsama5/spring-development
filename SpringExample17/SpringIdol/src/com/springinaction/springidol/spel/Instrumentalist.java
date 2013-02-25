@@ -27,6 +27,9 @@ public class Instrumentalist implements Performer {
 		this.instrument = instrument;
 	}
 
-	
+	public String getSong()
+	{
+		return this.song;
+	}
 
 }

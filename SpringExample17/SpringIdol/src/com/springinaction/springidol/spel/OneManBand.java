@@ -11,11 +11,11 @@ public class OneManBand implements Performer {
 	@Override
 	public void perform() throws PerformanceException {
 	
-		for(Object key : instruments.keySet())
+		for(String key : instruments.keySet())
 		{
 			System.out.println(key + " : ");
-			String instrument = (String) instruments.get(key);
-			System.out.println(instrument);
+			Instrument instrument = instruments.get(key);
+			instrument.play();
 		}
 		
 		System.out.println(song);
@@ -23,19 +23,27 @@ public class OneManBand implements Performer {
 	}
 	
 	private String song;
-	
+
 	public void setSong(String song)
 	{
 		this.song = song;
+		
 	}
 	
-	private Properties instruments;
+
+
 	
-	public void setInstruments(Properties instruments)
+	private Map<String, Instrument> instruments;
+	
+	public void setInstruments(Map<String, Instrument> instruments)
 	{
 		this.instruments = instruments;
 	}
 	
-	
+	public String getSong()
+	{
+		return this.song;
+	}
+
 
 }

@@ -6,11 +6,11 @@
 	 <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
 	 <constructor-arg>
 	 <bean class ="com.springinaction.springidol.Sonnet29" />
-	 </constructor-arg>
+	 </constructor-arg>	<!-- adding a parameter or arguement to the object's constructor -->
 	 <property name ="instrument" ref  = "saxophone" />
 	 </bean>
 	 
-	 <bean id="saxophone" class = "com.springinaction.springidol.Saxophone" />
+	<bean id="saxophone" class = "com.springinaction.springidol.Saxophone" />
 	 <bean id="piano" class="com.springinaction.springidol.Piano" />
 	 
 	 <bean id="hank" class="com.springinaction.springidol.OneManBand">
@@ -26,6 +26,7 @@
          
 	 </bean>
 	 
+	 <bean id="carl" class="com.springinaction.springidol.Instrumentalist"
 	 
 
 </beans>
