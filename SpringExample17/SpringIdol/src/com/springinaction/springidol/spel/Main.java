@@ -15,13 +15,13 @@ public class Main {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spel/spring-idol.xml");
 		Instrumentalist kenny = (Instrumentalist) ctx.getBean("kenny");
 		
-		Performer hank = (OneManBand) ctx.getBean("hank");
+		Instrumentalist hank = (Instrumentalist) ctx.getBean("hank");
 		
 		
 		kenny.perform();
 		hank.perform();
-		System.out.println(hank.getClass());
-		System.out.println(kenny.getSong().hashCode());
+		System.out.println(hank.getInstrument()==kenny.getInstrument());
+		
 		
 		
 		

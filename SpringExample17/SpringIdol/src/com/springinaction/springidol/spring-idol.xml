@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
+    <context:component-scan base-package="com.springinaction.springidol">
+      
+    </context:component-scan>
 	 <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
-	 <constructor-arg>
-	 <bean class ="com.springinaction.springidol.Sonnet29" />
-	 </constructor-arg>	<!-- adding a parameter or arguement to the object's constructor -->
-	 <property name ="instrument" ref  = "saxophone" />
-	 </bean>
-	 
+            <constructor-arg name="poem" ref="poem"/>
+         </bean>
+         <bean id="knife" class="com.springinaction.springidol.Knife"
+            scope="prototype">
+             <constructor-arg value="2"></constructor-arg>
+         </bean>
+         <bean id="knifejuggler" class="com.springinaction.springidol.KnifeJuggler"/>
+         
+	 <bean id="poem" class="com.springinaction.springidol.Sonnet29"/>
 	<bean id="saxophone" class = "com.springinaction.springidol.Saxophone" />
-	 <bean id="piano" class="com.springinaction.springidol.Piano" />
+         <bean id="piano" class="com.springinaction.springidol.Piano" />
+<!--<bean id="saxophone2" class = "com.springinaction.springidol.Saxophone" />
+	!-->
 	 
-	 <bean id="hank" class="com.springinaction.springidol.OneManBand">
-	 <property name="poem">
-            <bean class="com.springinaction.springidol.Sonnet29"/>
-         </property>
+	<!-- <bean id="hank" class="com.springinaction.springidol.OneManBand">
 	 <property name="instruments">
 	 	<map>
 	 		<entry key="SAXOPHONE" value-ref="saxophone"/>
@@ -24,9 +31,7 @@
 	 	</map>
 	 </property>
          
-	 </bean>
-	 
-	 <bean id="carl" class="com.springinaction.springidol.Instrumentalist"
-	 
+	 </bean>!-->
+	 	 
 
 </beans>

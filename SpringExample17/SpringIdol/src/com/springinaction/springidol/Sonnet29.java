@@ -1,5 +1,8 @@
 package com.springinaction.springidol;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Sonnet29 implements Poem {
 	
 	private static String[]LINES={

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd" xmlns:aop="http://www.springframework.org/schema/aop">
+        
+
+<util:list id="cities">
+<bean class="com.springinaction.spel.collections.City"
+p:name="Chicago" p:state="IL" p:population="2853114" />
+<bean class ="com.springinaction.spel.collections.City"
+p:name="Atlanta" p:state="GA" p:population="537958"/>
+<bean class="com.springinaction.spel.collections.City"
+p:name="Colorado" p:state="CO" p:population="98000"/>
+</util:list>
+
+<bean id="selectedcity" class="com.springinaction.spel.collections.Location">
+<property name="city" value="#{cities[1]}"/>
+</bean>
+
+<util:properties id="settings"
+    location="classpath:settings.properties"/>
+
+<bean id="ameer" class="com.springinaction.spel.collections.City"
+    p:name="#{systemEnvironment['Path']}" p:state="#{settings['name']}" p:population="#{settings['age']}"/>
+
+
+
+<bean id="america" class="com.springinaction.spel.collections.Country">
+<property name="name" value="America"/>
+<property name="cities" value="#{cities.?[population gt 100000]}"/>
+</bean>
+</beans>

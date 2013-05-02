@@ -2,10 +2,34 @@ package com.springinaction.springidol;
 
 
 import java.util.*;
+import javax.inject.Inject;
+import javax.inject.Named;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("eddie")
 public class Instrumentalist implements Performer {
+    
+        @Autowired
 	private Poem poem;
 	
+        @Value("3")
+        private int noOfdicks;
+
+    public Poem getPoem() {
+        return poem;
+    }
+
+    public int getNoOfdicks() {
+        return noOfdicks;
+    }
+
+    public Instrument getInstrument() {
+        return instrument;
+    }
+        
 	public Instrumentalist(Poem poem) 
 	{
 		this.poem = poem;
@@ -19,10 +43,11 @@ public class Instrumentalist implements Performer {
 	
 	
 	
-	
 	private Instrument instrument;
-	
-	public void setInstrument(Instrument instrument)
+    
+        @Inject
+        @Named("piano")
+        public void setInstrument(Instrument instrument)
 	{
 		this.instrument = instrument;
 	}

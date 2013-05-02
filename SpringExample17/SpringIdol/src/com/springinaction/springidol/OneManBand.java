@@ -1,6 +1,7 @@
 package com.springinaction.springidol;
 
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class OneManBand implements Performer {
 
@@ -24,6 +25,7 @@ public class OneManBand implements Performer {
 	
 	private Poem poem;
 	
+        @Autowired
 	public void setPoem(Poem poem)
 	{
 		this.poem = poem;

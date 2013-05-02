@@ -20,17 +20,22 @@ public class Main {
 		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");
 		
-		OneManBand hank = (OneManBand) ctx.getBean("hank");
-		hank.perform();
-		Poem hankspoem = hank.getPoem();
-		if(hankspoem instanceof Sonnet29)
-			System.out.println("Hanks poem is of type "+Sonnet29.class);
+		
 		Instrumentalist kenny = (Instrumentalist) ctx.getBean("kenny");
-		Collection<Instrument> list = kenny.getInstruments();
-		for(Instrument e : list)
-		{
-			e.play();
-		}
+		kenny.perform();
+                
+                Instrumentalist eddie = (Instrumentalist) ctx.getBean("eddie");
+                
+                System.out.println("Eddie performing");
+                eddie.perform();
+                KnifeJuggler juggler = (KnifeJuggler) ctx.getBean("knifejuggler");
+                
+                for(Knife f : juggler.getKnives())
+                {
+                    System.out.println(f.getSharpness());
+                }
+               // OneManBand hank = (OneManBand) ctx.getBean("hank");
+                //hank.perform();
 
 	}
 
