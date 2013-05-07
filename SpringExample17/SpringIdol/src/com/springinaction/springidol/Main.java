@@ -34,6 +34,9 @@ public class Main {
                 {
                     System.out.println(f.getSharpness());
                 }
+                
+               // Juggler someguy = (Juggler) ctx.getBean("duke");
+              //  someguy.perform();
                // OneManBand hank = (OneManBand) ctx.getBean("hank");
                 //hank.perform();
 

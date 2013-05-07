@@ -9,7 +9,6 @@
       
     </context:component-scan>
 	 <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
-            <constructor-arg name="poem" ref="poem"/>
          </bean>
          <bean id="knife" class="com.springinaction.springidol.Knife"
             scope="prototype">
@@ -17,7 +16,7 @@
          </bean>
          <bean id="knifejuggler" class="com.springinaction.springidol.KnifeJuggler"/>
          
-	 <bean id="poem" class="com.springinaction.springidol.Sonnet29"/>
+          <bean id="poem" class="com.springinaction.springidol.Sonnet29"/>
 	<bean id="saxophone" class = "com.springinaction.springidol.Saxophone" />
          <bean id="piano" class="com.springinaction.springidol.Piano" />
 <!--<bean id="saxophone2" class = "com.springinaction.springidol.Saxophone" />

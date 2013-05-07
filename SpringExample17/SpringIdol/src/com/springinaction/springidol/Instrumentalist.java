@@ -5,15 +5,13 @@ import java.util.*;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("eddie")
 public class Instrumentalist implements Performer {
     
-        @Autowired
-	private Poem poem;
+    
 	
         @Value("3")
         private int noOfdicks;
@@ -30,11 +28,13 @@ public class Instrumentalist implements Performer {
         return instrument;
     }
         
-	public Instrumentalist(Poem poem) 
-	{
-		this.poem = poem;
-		
-	}
+    
+    
+        @Autowired
+	private Poem poem;
+        
+        
+
 	@Override
 	public void perform() throws PerformanceException {
 		instrument.play();
