@@ -2,6 +2,7 @@ package com.springinaction.springidol;
 
 import java.util.Collection;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -18,9 +19,9 @@ public class Main {
 	public static void main(String[] args) throws PerformanceException {
 		// TODO Auto-generated method stub
 		
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringIdolConfig.class);
 		
-		
+	/*	
 		Instrumentalist kenny = (Instrumentalist) ctx.getBean("kenny");
 		kenny.perform();
                 
@@ -34,9 +35,9 @@ public class Main {
                 {
                     System.out.println(f.getSharpness());
                 }
-                
-               // Juggler someguy = (Juggler) ctx.getBean("duke");
-              //  someguy.perform();
+          */      
+               Juggler someguy = (Juggler) ctx.getBean("duke");
+               someguy.perform();
                // OneManBand hank = (OneManBand) ctx.getBean("hank");
                 //hank.perform();
 
