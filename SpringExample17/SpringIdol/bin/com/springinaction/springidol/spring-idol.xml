@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	 <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+	 <constructor-arg>
+	 <bean class ="com.springinaction.springidol.Sonnet29" />
+	 </constructor-arg>	<!-- adding a parameter or arguement to the object's constructor -->
+	 <property name ="instrument" ref  = "saxophone" />
+	 </bean>
+	 
+	<bean id="saxophone" class = "com.springinaction.springidol.Saxophone" />
+	 <bean id="piano" class="com.springinaction.springidol.Piano" />
+	 
+	 <bean id="hank" class="com.springinaction.springidol.OneManBand">
+	 <property name="poem">
+            <bean class="com.springinaction.springidol.Sonnet29"/>
+         </property>
+	 <property name="instruments">
+	 	<map>
+	 		<entry key="SAXOPHONE" value-ref="saxophone"/>
+	 		<entry key="PIANO" value-ref="piano"/>
+	 	</map>
+	 </property>
+         
+	 </bean>
+	 
+	 <bean id="carl" class="com.springinaction.springidol.Instrumentalist"
+	 
+
+</beans>

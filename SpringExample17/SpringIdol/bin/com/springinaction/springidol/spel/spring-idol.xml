@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		 <bean id="songSelector" class="com.springinaction.springidol.spel.SongSelector"/>
+		 <bean id="saxophone" class="com.springinaction.springidol.spel.Saxophone"></bean>
+	 <bean id="kenny" class="com.springinaction.springidol.spel.Instrumentalist">
+	 <property name="instrument" ref="saxophone"></property>
+	 <property name ="song" value="#{songSelector.selectSong()}" /><!-- selecting methods using spel -->
+	 </bean>
+	 
+	 <util:list id="cities">
+	 <bean class="
+	 </util:list>
+
+	 
+	 <bean id="hank" class="com.springinaction.springidol.spel.OneManBand">
+	 
+	 <property name="instruments">
+	 	<map>
+	 		<entry key="saxophone" value-ref="saxophone" />
+	 		<entry key="piano" value-ref="com.springinaction.springidol.spel.Piano" />	
+	 		<entry key="instrument" value-ref="#{songSelector.selectSong()=='Hey, I just met you and this is crazy so here's my number so call me maybe'?com.springinaction.springidol.spel.Guitar:com.springinaction.springidol.spel.Piano}"/>
+	 	</map>
+	 </property>
+	 
+	 <!-- Referencing hank's poem by wahtever kenny is playing. 
+	 this can be done the same way as just creating a new bean by itself and using ref to reference the same bean-->
+	 <property name="song" value="#{kenny.song}"></property>
+	 <property name="value" value="#{T(java.lang.Math).E}"></property>
+	 <!-- <property name="samesongaskenny" value="#{kenny.song.equals()}"></property> -->
+	 </bean>
+	 
+	 
+
+</beans>

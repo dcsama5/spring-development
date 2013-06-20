@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    
+    
+    <bean id="ameer" class="examples.Juggler" />
+    <bean id="audience" class="com.springinaction.springidol.aop.AnnotatedAudience" />
+    <bean id="instrument" class="examples.Piano" />
+
+    <bean id="trixxy" class="examples.Instrumentalist" autowire="byType">
+        <property name="song" value="Hi little butterflies" />
+    </bean>
+    <bean id="criticismEngine"
+          class="com.springinaction.springidol.aop.CriticismEngineImpl">
+          <property name="criticisms">
+              <list>
+                  <value>Geez dude...</value>
+                  <value>What are we going to do....loss abyss but not in great depth</value>
+                  <value>:)</value>
+              </list>
+          </property>
+    </bean>
+    <bean id="thinker" class="com.springinaction.springidol.aop.Volunteer"> </bean>
+    <bean id="magician" class="com.springinaction.springidol.aop.Magician" />
+    <bean id="gauge" class="com.springinaction.springidol.aop.StandardEgoGauge" />
+    
+      <aop:aspectj-autoproxy>
+        
+    </aop:aspectj-autoproxy>
+    
+        <aop:config>
+    <aop:aspect ref="magician">
+        <aop:pointcut id="thinking" expression=
+    "execution(* com.springinaction.springidol.aop.Volunteer.thinkOfSomething(String)) and args(thoughts)"
+    />
+        <aop:around
+            pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts"/>
+        
+      <!-- <aop:declare-parents types-matching="examples.Performer+" implement-interface="com.springinaction.springidol.aop.egoGauge" 
+       
+        delegate-ref="gauge"/> !-->
+    </aop:aspect>
+  
+</aop:config>
+
+
+</beans>
