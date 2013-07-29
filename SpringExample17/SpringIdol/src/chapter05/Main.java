@@ -4,6 +4,7 @@ package logic;/*
  */
 
 import chapter05.Excerpt;
+import chapter05.ExcerptSpitterDAO;
 import chapter05.HibernateExcerptSpitter;
 import java.sql.SQLException;
 import java.util.List;
@@ -21,16 +22,18 @@ public class Main{
     
     public static final ApplicationContext ctx = new ClassPathXmlApplicationContext("chapter05/xmlconfig.xml");
     public static Scanner sc = new Scanner(System.in);
-    private HibernateExcerptSpitter exc = new HibernateExcerptSpitter();
-    
+    private ExcerptSpitterDAO exc;
     public static void main(String[] args) throws SQLException
     {
+        
         Main maine = new Main();
         
     }
     
     public Main()
     {
+        
+        exc = (HibernateExcerptSpitter) ctx.getBean("hibernatespitter"); 
         String input = sc.nextLine();
         while(!input.equalsIgnoreCase("quit"))
         {

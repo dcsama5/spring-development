@@ -23,6 +23,7 @@
         </props>
        </property>
     </bean>
-    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor />
+    <bean id="hibernatespitter" class="chapter05.HibernateExcerptSpitter"/>
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
           
 </beans>

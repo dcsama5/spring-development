@@ -13,11 +13,11 @@
     <system systemId="http://www.springframework.org/schema/context" uri="www.springframework.org/schema/context/index"/>
     <system systemId="http://www.springframeo" uri="www.springframeo"/>
     <system systemId="http://www.springframework.org/schema/aop/spring-aop-3.1.xsd" uri="www.springframework.org/schema/aop/spring-aop-3.1.xsd"/>
-    <system systemId="http://www.springframework.org/schema/context/spring-context-3.0.xsd" uri="www.springframework.org/schema/context/spring-context-3.0.xsd"/>
     <system systemId="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" uri="www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
     <system systemId="http://www.springframework.org/schema/tool/spring-tool-3.1.xsd" uri="www.springframework.org/schema/tool/spring-tool-3.1.xsd"/>
     <system systemId="http://www.springframework.o" uri="www.springframework.o"/>
     <system systemId="http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" uri="www.springframework.org/schema/aop/spring-aop-3.0.xsd"/>
+    <system systemId="http://www.springframework.org/schema/context/spring-context-3.0.xsd" uri="www.springframework.org/schema/context/spring-context-3.0.xsd"/>
     <system systemId="http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" uri="www.springframework.org/schema/beans/spring-beans-3.0.xsd"/>
     <system systemId="http://www.springframework.org/schema/tool/spring-tool-3.0.xsd" uri="www.springframework.org/schema/tool/spring-tool-3.0.xsd"/>
 </catalog>
