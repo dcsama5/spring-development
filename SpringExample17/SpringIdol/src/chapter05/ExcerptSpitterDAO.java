@@ -4,6 +4,7 @@
  */
 package chapter05;
 
+import org.hibernate.Session;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -12,10 +13,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public interface ExcerptSpitterDAO {
     
-    public void setSpitterTemplate(JdbcTemplate jdbcTemplate);
+    public Session currentSession();
     public void addExcerpt(Excerpt exc);
     public boolean createTable();
-    public void removeExcerpt();
-    public void updateExcerpt();
+    public void removeExcerpt(Excerpt exc);
+    public void updateExcerpt(Excerpt exc);
     
 }
